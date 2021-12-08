@@ -96,6 +96,17 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 
+  it('04 - Verifica se \'objetoRetornado.consumption\', após a criação do menu, retorna um array vazio.', () => {
+    // TESTE 4: Verifique se 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
+    // ```
+    // const objetoRetornado = createMenu(objetoQualquer);
+    // objetoRetornado.consumption // Retorno: []
+    // ```
+    expect(result.consumption).toEqual([])
+    // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
+    // --------------------------------------------------------------------------------------
+  });
+
   it('05 - Verifique se, ao chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro (como `objetoRetornado.order(\'coxinha\')`), tal string é adicionada ao array retornado em `objetoRetornado.consumption', () => {
     // TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado,
     // passando uma string como parâmetro (como `objetoRetornado.order('coxinha')`), tal string é adicionada
@@ -110,14 +121,4 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
   });
 
-  it('04 - Verifica se \'objetoRetornado.consumption\', após a criação do menu, retorna um array vazio.', () => {
-    // TESTE 4: Verifique se 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
-    // ```
-    // const objetoRetornado = createMenu(objetoQualquer);
-    // objetoRetornado.consumption // Retorno: []
-    // ```
-    expect(result.consumption).toEqual([])
-    // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
-    // --------------------------------------------------------------------------------------
-  });
 });
