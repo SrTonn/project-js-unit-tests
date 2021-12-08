@@ -24,15 +24,38 @@ const circle = require('../src/circle');
 */
 
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
-  it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
-    fail('Teste vazio!');
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.
+  it('Verifica se ao receber um raio, a função `circle` retorna um objeto', () => {
     // Teste se circle retorna um objeto.
-    // Teste se o objeto retornado tem 3 propriedades.
+    expect(typeof circle(5) === 'object' && !Array.isArray(circle(5)))
+    .toBe(true)
+  });
+  
+  it('Verifica se ao não receber um parametro ou ao receber uma string como parametro, a função `circle` retorna undefined', () => {
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    expect(circle()).toBeUndefined()
+
+    // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.
+    expect(circle('w')).toBeUndefined()
+  });
+
+  it('Verifica se ao receber um valor, a função `circle` retorna um objeto contendo 3 propriedades', () => {
+    // Teste se o objeto retornado tem 3 propriedades.
+    expect(Object.keys(circle(10)).length).toBe(3)
+  });
+
+  it('Verifica se ao receber um raio de 2, a função `circle` retorna um objeto contendo o valor esperado para a circunferência', () => {
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
+    expect(circle(2).circumference).toBe(12.56)
+  });
+
+  it('Verifica se ao receber um raio de 3, a função `circle` retorna um objeto contendo o valor esperado para a area de 3', () => {
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
+    expect(circle(3).area).toBeCloseTo(28.26)
+  });
+
+  it('Verifica se ao receber um raio de 3, a função `circle` retorna um objeto contedos os valores esperados', () => {
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    expect(circle(3).area).toBeCloseTo(28.26)
+    expect(circle(3).circumference).toBeCloseTo(18.84)
   });
 });
