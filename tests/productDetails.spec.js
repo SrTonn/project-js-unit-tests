@@ -27,14 +27,38 @@ const productDetails = require('../src/productDetails');
 */
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
-  it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
-    // ESCREVA SEUS TESTES ABAIXO:
+  const result =  productDetails('cadeira gamer', 'mesa')
+  const [obj1, obj2] = result
+
+  it('Verifica se productDetails é uma função.', () => {
     // Teste se productDetails é uma função.
+    expect(typeof productDetails).toBe('function')
+  });
+  
+  it('Verifica se o retorno da função é um array.', () => {
     // Teste se o retorno da função é um array.
+    expect(Array.isArray(result)).toBe(true)
+  });
+
+  it('Verifica se o array retornado pela função contém dois itens dentro', () => {
     // Teste se o array retornado pela função contém dois itens dentro.
+    expect(result.length).toBe(2)
+  });
+ 
+  it('Verifica se os dois itens dentro do array retornado pela função são objetos.', () => {
     // Teste se os dois itens dentro do array retornado pela função são objetos.
+    expect(typeof obj1 === 'object' && !Array.isArray(obj1)).toBe(true)
+    expect(typeof obj2 === 'object' && !Array.isArray(obj2)).toBe(true)
+  });
+
+  it('Verifica se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.', () => {
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
+    expect(obj1).not.toBe(obj2)
+  });
+
+  it('Verifica se os dois productIds terminam com 123', () => {
     // Teste se os dois productIds terminam com 123.
+    expect(obj1.details.productId).toMatch(/123$/)
+    expect(obj2.details.productId).toMatch(/123$/)
   });
 });

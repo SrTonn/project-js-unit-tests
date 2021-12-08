@@ -29,7 +29,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     expect(typeof circle(5) === 'object' && !Array.isArray(circle(5)))
     .toBe(true)
   });
-  
+
   it('Verifica se ao não receber um parametro ou ao receber uma string como parametro, a função `circle` retorna undefined', () => {
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     expect(circle()).toBeUndefined()
