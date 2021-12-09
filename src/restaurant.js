@@ -57,7 +57,7 @@
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
+// ✅ PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
 // adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
 // DICA: para criar isso, você pode: 
 // - Definir a função `createMenu()`
@@ -78,17 +78,12 @@
 // PASSO 4: adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-const consumption = [];
-
-const addItem = (item) => {
-  consumption.push(item);
-};
 
 const createMenu = (objetoPassadoPorParametro) => ({
     fetchMenu: () => objetoPassadoPorParametro,
-    consumption,
-    order: (item) => {
-      addItem(item);
+    consumption: [],
+    order(item) {
+      this.consumption.push(item);
     },
   });
 
