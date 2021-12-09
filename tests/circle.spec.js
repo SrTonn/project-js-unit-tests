@@ -54,6 +54,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
 
   it('Verifica se ao receber um raio de 3, a função `circle` retorna um objeto contedos os valores esperados', () => {
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    expect(circle(3).radius).toBe(3)
     expect(circle(3).area).toBeCloseTo(28.26)
     expect(circle(3).circumference).toBeCloseTo(18.84)
   });
