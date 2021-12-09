@@ -51,18 +51,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     const menu = createMenu('aloha')
     expect(typeof menu === 'object' && !Array.isArray(menu)).toBe(true)
     expect(typeof menu.fetchMenu).toBe('function')
-    // ```
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
-    // ```
-
-    // ```
-    // TESTE 3: Verifique se o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
-    // ```
-    // const objetoRetornado = createMenu(objetoQualquer);
-    // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
-    // ```
-    // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
-    // --------------------------------------------------------------------------------------
   });
 
   it('02 - Verifique se \'objetoRetornado.fetchMenu()\' retorna um objeto cujas chaves são somente \'food\' e \'drink\'', () => {
@@ -72,6 +61,18 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     const menu = createMenu({ food: {}, drink: {} });
     // menu.fetchMenu() // Retorno: { food: {}, drink: {}}
     expect(menu.fetchMenu()).toEqual({ food: {}, drink: {}})
+  });
+
+  it('03 - Verifique se o menu passado pra função createMenu é identico ao menu recuperado pela função \'objetoRetornado.fetchMenu\'', () => {
+    // TESTE 3: Verifique se o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
+    // ```
+    const menu = createMenu({});
+    // menu.fetchMenu() // Retorno: objetoQualquer
+    // ```
+    expect(typeof menu.fetchMenu()).toBe('object')
+    expect(Array.isArray(menu.fetchMenu())).toBeFalsy()
+    // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
+    // --------------------------------------------------------------------------------------
   });
 
   it('04 - Verifica se \'objetoRetornado.consumption\', após a criação do menu, retorna um array vazio.', () => {
