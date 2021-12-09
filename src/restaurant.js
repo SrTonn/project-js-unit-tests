@@ -75,16 +75,32 @@
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 4: adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função
+// ✅ PASSO 4: adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = (objetoPassadoPorParametro) => ({
-    fetchMenu: () => objetoPassadoPorParametro,
-    consumption: [],
-    order(item) {
-      this.consumption.push(item);
-    },
-  });
+const createMenu = (obj) => ({
+  fetchMenu: () => obj,
+
+  consumption: [],
+
+  order(item) {
+    this.consumption.push(item);
+  },
+
+  pay() {
+    const arrayMenu = Object.values(obj);
+    const percent = 10;
+    let priceTotal = 0;
+
+    this.consumption.forEach((item) => {
+      arrayMenu.forEach((menuItem) => {
+        priceTotal += menuItem[item] ? menuItem[item] : 0;
+      });
+    });
+
+    return priceTotal + ((percent * priceTotal) / 100);
+  },
+});
 
 module.exports = createMenu;
