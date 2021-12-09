@@ -47,8 +47,8 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
  
   it('Verifica se os dois itens dentro do array retornado pela função são objetos.', () => {
     // Teste se os dois itens dentro do array retornado pela função são objetos.
-    expect(typeof obj1 === 'object' && !Array.isArray(obj1)).toBe(true)
-    expect(typeof obj2 === 'object' && !Array.isArray(obj2)).toBe(true)
+    expect(typeof obj1 === 'object' && !Array.isArray(obj1)).toBeTruthy()
+    expect(typeof obj2 === 'object' && !Array.isArray(obj2)).toBeTruthy()
   });
 
   it('Verifica se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.', () => {
