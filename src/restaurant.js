@@ -99,7 +99,7 @@ const createMenu = (obj) => ({
       });
     });
 
-    return priceTotal + ((percent * priceTotal) / 100);
+    return priceTotal * 1.1;
   },
 });
 
