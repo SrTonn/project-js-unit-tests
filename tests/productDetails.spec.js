@@ -23,7 +23,6 @@ const productDetails = require('../src/productDetails');
       }
     }
   ]
-
 */
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
@@ -34,7 +33,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste se productDetails é uma função.
     expect(typeof productDetails).toBe('function')
   });
-  
+
   it('Verifica se o retorno da função é um array.', () => {
     // Teste se o retorno da função é um array.
     expect(Array.isArray(result)).toBe(true)
@@ -44,7 +43,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste se o array retornado pela função contém dois itens dentro.
     expect(result.length).toBe(2)
   });
- 
+
   it('Verifica se os dois itens dentro do array retornado pela função são objetos.', () => {
     // Teste se os dois itens dentro do array retornado pela função são objetos.
     expect(obj1).toBeInstanceOf(Object);
