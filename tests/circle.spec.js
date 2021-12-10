@@ -44,7 +44,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
 
   it('Verifica se ao receber um raio de 2, a função `circle` retorna um objeto contendo o valor esperado para a circunferência', () => {
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    expect(circle(2).circumference).toBe(12.56)
+    expect(circle(2)).toHaveProperty('circumference', 12.56)
   });
 
   it('Verifica se ao receber um raio de 3, a função `circle` retorna um objeto contendo o valor esperado para a area de 3', () => {
