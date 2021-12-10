@@ -97,6 +97,6 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     menu.order('coxinha');
     menu.order('agua');
     menu.order('coxinha');
-    expect(menu.pay()).toBe(12.87)
+    expect(menu.pay()).toBeCloseTo(12.87)
   });
 });
