@@ -90,7 +90,6 @@ const createMenu = (obj) => ({
 
   pay() {
     const arrayMenu = Object.values(obj);
-    const percent = 10;
     let priceTotal = 0;
 
     this.consumption.forEach((item) => {
