@@ -58,8 +58,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
 
   it('03 - Verifique se o menu passado pra função createMenu é identico ao menu recuperado pela função \'objetoRetornado.fetchMenu\'', () => {
     const menu = createMenu({});
-    expect(typeof menu.fetchMenu()).toBe('object')
-    expect(Array.isArray(menu.fetchMenu())).toBeFalsy()
+    expect(menu.fetchMenu()).toBeInstanceOf(Object);
   });
 
   it('04 - Verifica se \'objetoRetornado.consumption\', após a criação do menu, retorna um array vazio.', () => {
