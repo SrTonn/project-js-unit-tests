@@ -47,8 +47,8 @@ const createMenu = require('../src/restaurant');
 describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
   it('01 Verifique se o retorno da função createMenu() é um objeto que possui a chave fetchMenu, a qual tem como valor uma função.', () => {
     const menu = createMenu('aloha')
-    expect(typeof menu === 'object' && !Array.isArray(menu)).toBe(true)
-    expect(typeof menu.fetchMenu).toBe('function')
+    expect(menu).toBeInstanceOf(Object);
+    expect(menu.fetchMenu).toBeInstanceOf(Function);
   });
 
   it('02 - Verifique se \'objetoRetornado.fetchMenu()\' retorna um objeto cujas chaves são somente \'food\' e \'drink\'', () => {
