@@ -39,7 +39,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
 
   it('Verifica se ao receber um valor, a função `circle` retorna um objeto contendo 3 propriedades', () => {
     // Teste se o objeto retornado tem 3 propriedades.
-    expect(Object.keys(circle(10)).toHaveLength(3));
+    expect(Object.keys(circle(10))).toHaveLength(3);
   });
 
   it('Verifica se ao receber um raio de 2, a função `circle` retorna um objeto contendo o valor esperado para a circunferência', () => {
