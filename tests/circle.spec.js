@@ -27,6 +27,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto', () => {
     // Teste se circle retorna um objeto.
     expect(circle(5)).toBeInstanceOf(Object);
+    expect(circle(5)).not.toBeInstanceOf(Array);
   });
 
   it('Verifica se ao não receber um parametro ou ao receber uma string como parametro, a função `circle` retorna undefined', () => {
